@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="flex justify-center items-center h-screen">
+        <form id="form" class="flex flex-col gap-3 mx-auto mt-12">
+            <input required id="name" type="name" class="border border-black p-2 outline-none rounded-lg"
+                placeholder="First-Name">
+            <input required id="name2" type="name" class="border border-black p-2 outline-none rounded-lg"
+                placeholder="Last-Name">
+            <input required id="email" type="email" class="border border-black p-2 outline-none rounded-lg"
+                placeholder="E-mail">
+            <input required id="password" type="password" class="border border-black p-2 outline-none rounded-lg"
+                placeholder="Password"><button type="submit"
+                class="bg-green-500 mx-auto py-3 px-8 text-white rounded-lg">Submit</button>
+        </form>
+    </div>
+    <script src="/assets/js/index.js"></script>
+    <script>
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (
+                name.value !== "" &&
+                name2.value !== "" &&
+                email.value !== "" &&
+                password.value !== ""
+            ) {
+                console.log(`My First-Name is ${document.getElementById("name").value}`);
+                console.log(`My Last-Name is ${document.getElementById("name2").value}`);
+                console.log(`My email is ${document.getElementById("email").value}`);
+                console.log(`My password is ${document.getElementById("password").value}`);
+                name.value = "";
+                name2.value = "";
+                email.value = "";
+                password.value = "";
+                window.location.href = "./code.html";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
